@@ -62,3 +62,18 @@ Este proyecto está organizado en diferentes carpetas para facilitar su uso y ma
 
 Esta estructura facilita la navegación y el mantenimiento del proyecto, proporcionando una organización clara y eficiente.
 
+## Librerías
+
+- **beautifulsoup4 (BeautifulSoup)**: Herramienta para el web scraping y la extracción de datos de archivos HTML y XML.
+- **requests**: Librería para realizar solicitudes HTTP y obtener datos de sitios web.
+- **selenium**: Herramienta para la automatización de navegadores y la interacción con páginas web dinámicas.
+- **pandas**: Biblioteca para la manipulación y análisis de datos en estructuras tabulares.
+- **numpy**: Biblioteca para operaciones matemáticas y numéricas avanzadas.
+- **seaborn**: Biblioteca para la visualización de datos estadísticos con gráficos atractivos.
+- **matplotlib**: Biblioteca para la creación de gráficos estáticos en 2D.
+- **folium**: Herramienta para la visualización de datos geoespaciales en mapas interactivos.
+- **plotly**: Biblioteca para la creación de gráficos interactivos y visualizaciones avanzadas.
+- **joblib**: Herramienta para la serialización de objetos de Python y la optimización de modelos.
+- **scikit-learn**: Biblioteca para algoritmos de machine learning, validación de modelos y métricas de evaluación.
+- **imbalanced-learn**: Herramienta para técnicas de muestreo y balanceo de clases en conjuntos de datos desequilibrados.
+- **category_encoders**: Biblioteca para la codificación de variables categóricas en modelos de machine learning.
