@@ -1,10 +1,11 @@
-# Predicción de Retrasos en Vuelos Internos en EEUU
+# Proyecto Vuelos
 
-Desarrollo de un Modelo Predictivo con Streamlit para la Visualización de Datos.
 
-## Descripción del Proyecto
 
-Este proyecto utiliza datos históricos de vuelos en Estados Unidos para desarrollar un modelo predictivo que estime la probabilidad de retrasos en vuelos internos. La aplicación de visualización de datos ha sido desarrollada utilizando Streamlit.
+
+## Descripción 
+
+Predicción de Retrasos en Vuelos Internos en EEUU: Desarrollo de un Modelo Predictivo con Streamlit para la Visualización de Datos.
 
 ## Objetivo
 
