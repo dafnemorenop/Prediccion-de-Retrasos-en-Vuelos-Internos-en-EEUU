@@ -1,7 +1,6 @@
 # Proyecto Vuelos
 
-
-
+Este repositorio contiene diversos scripts y datos relacionados con el proyecto Ludonauta.
 
 ## Descripción 
 
