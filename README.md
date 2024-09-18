@@ -1,8 +1,6 @@
 # Proyecto FlyPredict
 
-Este repositorio contiene diversos scripts y datos relacionados con el proyecto FlyPredict.
-
-Los datos para este estudio fueron extraídos del Departamento de Estadísticas de Transporte de EE. UU. (BTS), una entidad del Departamento de Transporte (DOT).
+Este repositorio contiene diversos scripts y datos relacionados con el proyecto FlyPredict. Los datos para este estudio fueron extraídos del Departamento de Estadísticas de Transporte de EE. UU. (BTS), una entidad del Departamento de Transporte (DOT).
 
 [Departamento de Estadísticas de Transporte de EE. UU.](https://www.transtats.bts.gov/ONTIME/Departures.aspx)
 
