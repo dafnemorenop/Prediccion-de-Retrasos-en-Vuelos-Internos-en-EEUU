@@ -18,7 +18,7 @@ Puedes acceder a la aplicación de Streamlit en el siguiente enlace:
 
 Este proyecto se centró en desarrollar un modelo predictivo para estimar retrasos en vuelos internos en EE. UU., utilizando técnicas de análisis de datos y aprendizaje automático. Además, se creó una interfaz interactiva con Streamlit, que permite a los usuarios explorar y visualizar de manera intuitiva las predicciones y los datos asociados con los retrasos de vuelos, facilitando una comprensión más clara y accesible de la información.
 
-## Estructura del Proyecto
+## Archivos
 
 Este proyecto está organizado en diferentes carpetas para facilitar su uso y mantenimiento. A continuación, se detalla la organización de las carpetas y archivos:
 
@@ -58,7 +58,9 @@ Este proyecto está organizado en diferentes carpetas para facilitar su uso y ma
 
 Esta estructura facilita la navegación y el mantenimiento del proyecto, proporcionando una organización clara y eficiente.
 
-## Librerías
+## Instalación de librerías
+
+Para ejecutar los scripts en este proyecto, asegúrate de tener instaladas las siguientes librerías:
 
 - **beautifulsoup4 (BeautifulSoup)**: Herramienta para el web scraping y la extracción de datos de archivos HTML y XML.
 - **requests**: Librería para realizar solicitudes HTTP y obtener datos de sitios web.
@@ -73,3 +75,7 @@ Esta estructura facilita la navegación y el mantenimiento del proyecto, proporc
 - **scikit-learn**: Biblioteca para algoritmos de machine learning, validación de modelos y métricas de evaluación.
 - **imbalanced-learn**: Herramienta para técnicas de muestreo y balanceo de clases en conjuntos de datos desequilibrados.
 - **category_encoders**: Biblioteca para la codificación de variables categóricas en modelos de machine learning.
+
+## Uso
+
+Los archivos CSV, utilizados como base del proyecto, están dentro de la carpeta Data.
