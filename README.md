@@ -6,13 +6,13 @@ Este repositorio contiene diversos scripts y datos relacionados con el proyecto 
 
 Predicción de Retrasos en Vuelos Internos en EEUU: Desarrollo de un Modelo Predictivo con Streamlit para la Visualización de Datos.
 
-## Objetivo
-
-Este proyecto se centró en desarrollar un modelo predictivo para estimar retrasos en vuelos internos en EE. UU., utilizando técnicas de análisis de datos y aprendizaje automático. Además, se creó una interfaz interactiva con Streamlit, que permite a los usuarios explorar y visualizar de manera intuitiva las predicciones y los datos asociados con los retrasos de vuelos, facilitando una comprensión más clara y accesible de la información.
-
 Puedes acceder a la aplicación de Streamlit en el siguiente enlace:
 
 [Aplicación de Streamlit](https://proyectoaviones.streamlit.app/)
+
+## Objetivo
+
+Este proyecto se centró en desarrollar un modelo predictivo para estimar retrasos en vuelos internos en EE. UU., utilizando técnicas de análisis de datos y aprendizaje automático. Además, se creó una interfaz interactiva con Streamlit, que permite a los usuarios explorar y visualizar de manera intuitiva las predicciones y los datos asociados con los retrasos de vuelos, facilitando una comprensión más clara y accesible de la información.
 
 ## Acceso a los Datos
 
