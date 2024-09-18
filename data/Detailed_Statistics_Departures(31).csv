@@ -1,0 +1,19 @@
+Detailed Statistics Departures  
+Origin Airport: Albuquerque, NM: Albuquerque International Sunport (ABQ)
+Airline: Allegiant Air (G4)
+Month(s): December
+Day(s): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 and 31
+Year(s): 2021, 2022 and 2023
+
+Carrier Code,Date (MM/DD/YYYY),Flight Number,Tail Number,Destination Airport,Scheduled departure time,Actual departure time,Scheduled elapsed time (Minutes),Actual elapsed time (Minutes),Departure delay (Minutes),Wheels-off time,Taxi-Out time (Minutes),Delay Carrier (Minutes),Delay Weather (Minutes),Delay National Aviation System (Minutes),Delay Security (Minutes),Delay Late Aircraft Arrival (Minutes)
+"G4","12/03/2021","0009","325NV","LAS","17:29","17:40","92","96","11","17:58","18","5","0","4","0","6"
+"G4","12/06/2021","0009","250NV","LAS","17:29","17:50","92","96","21","18:01","11","7","0","4","0","14"
+"G4","12/10/2021","0009","333NV","LAS","17:29","17:29","92","101","0","17:47","18","0","0","0","0","0"
+"G4","12/13/2021","0009","318NV","LAS","17:29","17:29","92","104","0","17:46","17","0","0","0","0","0"
+"G4","12/17/2021","0076","308NV","LAS","12:33","12:31","91","87","-2","12:39","8","0","0","0","0","0"
+"G4","12/20/2021","0076","318NV","LAS","22:23","23:18","91","97","55","23:33","15","23","0","6","0","32"
+"G4","12/24/2021","0076","301NV","LAS","17:55","18:11","91","98","16","18:25","14","16","0","7","0","0"
+"G4","12/27/2021","0076","","LAS","17:40","00:00","91","0","0","00:00","0","0","0","0","0","0"
+"G4","12/31/2021","0076","","LAS","22:33","00:00","91","0","0","00:00","0","0","0","0","0","0"
+
+ SOURCE: Bureau of Transportation Statistics
