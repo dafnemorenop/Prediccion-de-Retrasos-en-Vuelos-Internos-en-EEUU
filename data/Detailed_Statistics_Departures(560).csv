@@ -1,0 +1,12 @@
+Detailed Statistics Departures  
+Origin Airport: Dayton, OH: James M Cox/Dayton International (DAY)
+Airline: Mesa Airlines Inc. (YV)
+Month(s): December
+Day(s): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 and 31
+Year(s): 2021, 2022 and 2023
+
+Carrier Code,Date (MM/DD/YYYY),Flight Number,Tail Number,Destination Airport,Scheduled departure time,Actual departure time,Scheduled elapsed time (Minutes),Actual elapsed time (Minutes),Departure delay (Minutes),Wheels-off time,Taxi-Out time (Minutes),Delay Carrier (Minutes),Delay Weather (Minutes),Delay National Aviation System (Minutes),Delay Security (Minutes),Delay Late Aircraft Arrival (Minutes)
+"YV","12/31/2022","5818","N246LR","DFW","07:35","07:28","169","167","-7","07:48","20","0","0","0","0","0"
+"YV","12/31/2022","5906","N246LR","DFW","14:01","13:58","169","154","-3","14:14","16","0","0","0","0","0"
+
+ SOURCE: Bureau of Transportation Statistics
