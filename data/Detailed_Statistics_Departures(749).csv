@@ -1,0 +1,21 @@
+Detailed Statistics Departures  
+Origin Airport: Fort Myers, FL: Southwest Florida International (RSW)
+Airline: PSA Airlines Inc. (OH)
+Month(s): December
+Day(s): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 and 31
+Year(s): 2021, 2022 and 2023
+
+Carrier Code,Date (MM/DD/YYYY),Flight Number,Tail Number,Destination Airport,Scheduled departure time,Actual departure time,Scheduled elapsed time (Minutes),Actual elapsed time (Minutes),Departure delay (Minutes),Wheels-off time,Taxi-Out time (Minutes),Delay Carrier (Minutes),Delay Weather (Minutes),Delay National Aviation System (Minutes),Delay Security (Minutes),Delay Late Aircraft Arrival (Minutes)
+"OH","12/04/2021","5410","N581NN","PHL","14:05","13:58","168","151","-7","14:15","17","0","0","0","0","0"
+"OH","12/11/2021","5410","N578NN","PHL","14:05","13:57","168","151","-8","14:09","12","0","0","0","0","0"
+"OH","12/20/2023","5547","N554NN","DCA","17:26","17:16","154","154","-10","17:28","12","0","0","0","0","0"
+"OH","12/21/2023","5547","N572NN","DCA","17:26","17:19","154","178","-7","17:37","18","0","0","17","0","0"
+"OH","12/22/2023","5547","N618NN","DCA","16:08","16:03","154","166","-5","16:28","25","0","0","0","0","0"
+"OH","12/23/2023","5547","N601EN","DCA","16:15","16:03","154","149","-12","16:20","17","0","0","0","0","0"
+"OH","12/26/2023","5547","N548NN","DCA","17:26","18:38","154","172","72","19:05","27","8","0","18","0","64"
+"OH","12/27/2023","5547","N590NN","DCA","17:26","18:52","154","126","86","19:08","16","0","0","1","0","57"
+"OH","12/28/2023","5547","N592NN","DCA","17:26","17:15","154","133","-11","17:30","15","0","0","0","0","0"
+"OH","12/29/2023","5547","N584NN","DCA","17:26","17:15","154","135","-11","17:45","30","0","0","0","0","0"
+"OH","12/30/2023","5547","N555NN","DCA","16:15","16:03","154","140","-12","16:23","20","0","0","0","0","0"
+
+ SOURCE: Bureau of Transportation Statistics
