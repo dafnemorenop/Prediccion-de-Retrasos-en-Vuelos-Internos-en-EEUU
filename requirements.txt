@@ -11,3 +11,61 @@ joblib==1.3.2           # Herramienta para la serialización de objetos de Pytho
 scikit-learn==1.3.0     # Biblioteca para algoritmos de machine learning, validación de modelos y métricas de evaluación.
 imbalanced-learn==0.11.0 # Herramienta para técnicas de muestreo y balanceo de clases en conjuntos de datos desequilibrados.
 category_encoders==2.6.1 # Biblioteca para la codificación de variables categóricas en modelos de machine learning.
+altair==5.3.0                 # Biblioteca para la creación de gráficos declarativos en Python.
+attrs==23.2.0                 # Utilidad para trabajar con clases de Python que simplifica la creación de clases con atributos.
+blinker==1.7.0                # Proporciona señales y eventos entre diferentes componentes de una aplicación.
+branca==0.7.1                 # Herramienta utilizada para generar mapas web y estilos en combinación con Folium.
+cachetools==5.3.3             # Herramienta para caché en memoria, útil en la optimización de datos y llamadas repetidas.
+certifi==2024.2.2             # Proporciona un paquete de certificados SSL válidos para las solicitudes HTTPS.
+charset-normalizer==3.3.2     # Herramienta para detectar la codificación de archivos de texto.
+click==8.1.7                  # Biblioteca para la creación de interfaces de línea de comandos (CLI) en Python.
+colorama==0.4.6               # Biblioteca para imprimir texto con colores en la consola, compatible con Windows.
+contourpy==1.2.0              # Biblioteca para la creación de gráficos de contornos en matplotlib.
+cycler==0.12.1                # Utilidad para crear ciclos de parámetros para gráficos, como colores o estilos de línea.
+et-xmlfile==1.1.0             # Herramienta de escritura rápida de XML, utilizada en la manipulación de archivos Excel con openpyxl.
+folium==0.16.0                # Herramienta para la visualización de datos geoespaciales en mapas interactivos.
+fonttools==4.50.0             # Biblioteca para la manipulación de archivos de fuentes.
+gitdb==4.0.11                 # Interfaz de bajo nivel para trabajar con repositorios Git.
+GitPython==3.1.43             # Biblioteca que proporciona una API para interactuar con Git.
+idna==3.6                    # Implementación del estándar IDNA para nombres de dominio internacionales.
+Jinja2==3.1.3                 # Motor de plantillas utilizado para generar HTML dinámico.
+jsonschema==4.21.1            # Biblioteca para la validación de estructuras JSON.
+jsonschema-specifications==2023.12.1  # Proporciona las especificaciones del esquema JSON.
+kiwisolver==1.4.5             # Biblioteca para resolver ecuaciones matemáticas, utilizada principalmente en matplotlib.
+markdown-it-py==3.0.0         # Biblioteca para analizar y convertir Markdown en HTML.
+MarkupSafe==2.1.5             # Implementación de cadenas seguras para evitar inyecciones de código en HTML.
+matplotlib==3.8.3             # Biblioteca para la creación de gráficos estáticos en 2D.
+mdurl==0.1.2                  # Herramienta para manipular URLs de manera segura, utilizada en bibliotecas de Markdown.
+Menu==3.2.2                   # Herramienta para crear menús interactivos en aplicaciones Python.
+numpy==1.26.4                 # Biblioteca para operaciones matemáticas y numéricas avanzadas.
+openpyxl==3.1.2               # Biblioteca para la manipulación de archivos Excel (XLSX).
+option==2.1.0                 # Proporciona una clase de opción/manejo de errores de manera funcional.
+packaging==23.2               # Biblioteca para el manejo y resolución de dependencias y versiones de paquetes.
+pandas==2.2.1                 # Biblioteca para la manipulación y análisis de datos en estructuras tabulares.
+pillow==10.2.0                # Biblioteca para el procesamiento de imágenes en Python.
+plotly==5.20.0                # Biblioteca para la creación de gráficos interactivos y visualizaciones avanzadas.
+protobuf==4.25.3              # Biblioteca para la serialización y deserialización de estructuras de datos (Protocol Buffers).
+pyarrow==15.0.2               # Biblioteca para el manejo eficiente de datos en memoria y formatos de datos de alto rendimiento.
+pydeck==0.8.1b0               # Biblioteca para la visualización de datos geoespaciales y grandes volúmenes de datos en 3D.
+Pygments==2.17.2              # Biblioteca para la resaltación de sintaxis en código fuente.
+pyparsing==3.1.2              # Biblioteca para el análisis y procesamiento de gramáticas de texto.
+python-dateutil==2.9.0.post0  # Herramienta para el manejo y manipulación de fechas en Python.
+pytz==2024.1                  # Biblioteca para manejar zonas horarias.
+referencing==0.34.0           # Herramienta para la referencia de identificadores en estructuras JSON y esquemas.
+requests==2.31.0              # Librería para realizar solicitudes HTTP y obtener datos de sitios web.
+rich==13.7.1                  # Biblioteca para crear salidas atractivas en la consola, con colores y gráficos avanzados.
+rpds-py==0.18.0               # Implementación de estructuras de datos persistentes en Python.
+six==1.16.0                   # Herramienta de compatibilidad entre Python 2 y 3.
+smmap==5.0.1                  # Implementación de mapeo de memoria para archivos Git.
+streamlit==1.32.2             # Framework para la creación de aplicaciones web interactivas desde código Python.
+streamlit-folium==0.18.0      # Extensión para integrar mapas Folium en aplicaciones Streamlit.
+streamlit-option-menu==0.3.12 # Herramienta para crear menús desplegables de opciones en Streamlit.
+tenacity==8.2.3               # Biblioteca para manejar reintentos automáticos de llamadas a funciones fallidas.
+toml==0.10.2                  # Herramienta para leer y escribir archivos de configuración en formato TOML.
+toolz==0.12.1                 # Biblioteca para la manipulación de datos funcionales, como mapeos y filtros.
+tornado==6.4                  # Framework para crear aplicaciones web y servidores asíncronos en tiempo real.
+typing_extensions==4.10.0     # Proporciona soporte adicional para anotaciones de tipos en Python.
+tzdata==2024.1                # Biblioteca con información actualizada de zonas horarias.
+urllib3==2.2.1                # Biblioteca para gestionar solicitudes HTTP con funciones avanzadas como conexión en grupo.
+watchdog==4.0.0               # Herramienta para monitorizar cambios en el sistema de archivos.
+xyzservices==2024.4.0         # Biblioteca para la descarga y el manejo de servicios de mapas XYZ.
