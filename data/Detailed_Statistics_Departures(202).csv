@@ -1,0 +1,19 @@
+Detailed Statistics Departures  
+Origin Airport: Bend/Redmond, OR: Roberts Field (RDM)
+Airline: Allegiant Air (G4)
+Month(s): December
+Day(s): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 and 31
+Year(s): 2021, 2022 and 2023
+
+Carrier Code,Date (MM/DD/YYYY),Flight Number,Tail Number,Destination Airport,Scheduled departure time,Actual departure time,Scheduled elapsed time (Minutes),Actual elapsed time (Minutes),Departure delay (Minutes),Wheels-off time,Taxi-Out time (Minutes),Delay Carrier (Minutes),Delay Weather (Minutes),Delay National Aviation System (Minutes),Delay Security (Minutes),Delay Late Aircraft Arrival (Minutes)
+"G4","12/03/2021","0204","332NV","LAS","17:32","18:05","112","112","33","18:16","11","33","0","0","0","0"
+"G4","12/06/2021","0204","306NV","LAS","17:32","18:11","112","106","39","18:23","12","33","0","0","0","0"
+"G4","12/10/2021","0204","250NV","LAS","09:30","10:09","112","106","39","10:24","15","33","0","0","0","0"
+"G4","12/13/2021","0204","319NV","LAS","17:32","18:19","112","146","47","18:49","30","47","0","34","0","0"
+"G4","12/17/2021","0291","301NV","LAS","09:50","09:59","111","113","9","10:19","20","0","0","0","0","0"
+"G4","12/20/2021","0291","319NV","LAS","14:03","14:13","111","108","10","14:25","12","0","0","0","0","0"
+"G4","12/24/2021","0301","316NV","LAS","10:53","10:51","111","109","-2","11:04","13","0","0","0","0","0"
+"G4","12/27/2021","0301","325NV","LAS","21:45","23:29","111","128","104","00:04","35","0","15","17","0","89"
+"G4","12/31/2021","0301","332NV","LAS","09:43","10:09","111","104","26","10:22","13","0","19","0","0","0"
+
+ SOURCE: Bureau of Transportation Statistics
