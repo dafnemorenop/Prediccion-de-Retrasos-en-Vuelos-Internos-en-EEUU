@@ -56,6 +56,10 @@ Este proyecto está organizado en diferentes carpetas para facilitar su uso y ma
 
 Esta estructura facilita la navegación y el mantenimiento del proyecto, proporcionando una organización clara y eficiente.
 
+## Uso
+
+Los archivos CSV, utilizados como base del proyecto, están dentro de la carpeta Data.
+
 ## Instalación de librerías
 
 Para ejecutar los scripts en este proyecto, asegúrate de tener instaladas las librerías que aparecen en `requirements.txt`. Puedes instalarlas todas ejecutando el siguiente comando:
@@ -63,6 +67,3 @@ Para ejecutar los scripts en este proyecto, asegúrate de tener instaladas las l
 ```bash
 pip install -r requirements.txt
 
-## Uso
-
-Los archivos CSV, utilizados como base del proyecto, están dentro de la carpeta Data.
