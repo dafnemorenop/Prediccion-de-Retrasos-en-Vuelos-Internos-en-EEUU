@@ -1,0 +1,21 @@
+Detailed Statistics Departures  
+Origin Airport: Raleigh/Durham, NC: Raleigh-Durham International (RDU)
+Airline: Allegiant Air (G4)
+Month(s): December
+Day(s): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 and 31
+Year(s): 2021, 2022 and 2023
+
+Carrier Code,Date (MM/DD/YYYY),Flight Number,Tail Number,Destination Airport,Scheduled departure time,Actual departure time,Scheduled elapsed time (Minutes),Actual elapsed time (Minutes),Departure delay (Minutes),Wheels-off time,Taxi-Out time (Minutes),Delay Carrier (Minutes),Delay Weather (Minutes),Delay National Aviation System (Minutes),Delay Security (Minutes),Delay Late Aircraft Arrival (Minutes)
+"G4","12/03/2021","1657","293NV","PGD","21:19","21:32","118","118","13","21:50","18","0","0","0","0","0"
+"G4","12/06/2021","1657","235NV","PGD","21:19","21:33","118","115","14","21:44","11","0","0","0","0","0"
+"G4","12/10/2021","1657","235NV","PGD","21:19","21:28","118","113","9","21:44","16","0","0","0","0","0"
+"G4","12/13/2021","1657","295NV","PGD","21:19","21:18","118","109","-1","21:32","14","0","0","0","0","0"
+"G4","12/17/2021","0503","234NV","PGD","12:30","13:07","117","137","37","13:35","28","25","0","20","0","12"
+"G4","12/20/2021","1681","292NV","PGD","21:32","22:43","117","120","71","22:51","8","0","0","11","0","63"
+"G4","12/22/2021","1719","251NV","PGD","21:25","22:01","117","132","36","22:14","13","28","0","15","0","8"
+"G4","12/24/2021","1596","251NV","PGD","15:03","15:19","117","101","16","15:30","11","0","0","0","0","0"
+"G4","12/27/2021","1719","207NV","PGD","21:33","00:15","117","147","162","00:28","13","0","0","42","0","150"
+"G4","12/29/2021","1646","284NV","PGD","15:09","16:18","116","113","69","16:32","14","17","0","0","0","49"
+"G4","12/31/2021","1647","293NV","PGD","15:04","17:10","116","117","126","17:28","18","4","0","1","0","122"
+
+ SOURCE: Bureau of Transportation Statistics
