@@ -1,6 +1,10 @@
 # Proyecto Vuelos
 
-Este repositorio contiene diversos scripts y datos relacionados con el proyecto Ludonauta.
+Este repositorio contiene diversos scripts y datos relacionados con el proyecto Aviones.
+
+Los datos para este estudio fueron extraídos del Departamento de Estadísticas de Transporte de EE. UU. (BTS), una entidad del Departamento de Transporte (DOT).
+
+https://www.transtats.bts.gov/ONTIME/Departures.aspx 
 
 ## Descripción 
 
