@@ -1,0 +1,14 @@
+Detailed Statistics Departures  
+Origin Airport: Barrow, AK: Wiley Post/Will Rogers Memorial (BRW)
+Airline: Horizon Air (QX)
+Month(s): December
+Day(s): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 and 31
+Year(s): 2021, 2022 and 2023
+
+Carrier Code,Date (MM/DD/YYYY),Flight Number,Tail Number,Destination Airport,Scheduled departure time,Actual departure time,Scheduled elapsed time (Minutes),Actual elapsed time (Minutes),Departure delay (Minutes),Wheels-off time,Taxi-Out time (Minutes),Delay Carrier (Minutes),Delay Weather (Minutes),Delay National Aviation System (Minutes),Delay Security (Minutes),Delay Late Aircraft Arrival (Minutes)
+"QX","12/05/2023","2085","N645QX","ANC","10:00","10:41","112","123","41","10:48","7","0","41","11","0","0"
+"QX","12/12/2023","2085","N650QX","ANC","10:00","10:13","112","119","13","10:19","6","13","0","7","0","0"
+"QX","12/19/2023","2085","N639QX","ANC","10:31","10:43","116","114","12","10:48","5","0","0","0","0","0"
+"QX","12/26/2023","2085","N649QX","ANC","10:31","10:49","116","119","18","10:54","5","0","18","3","0","0"
+
+ SOURCE: Bureau of Transportation Statistics
