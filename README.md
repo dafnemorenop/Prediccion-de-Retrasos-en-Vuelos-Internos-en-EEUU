@@ -1,6 +1,6 @@
 # Proyecto Vuelos
 
-Este repositorio contiene diversos scripts y datos relacionados con el proyecto Aviones.
+Este repositorio contiene diversos scripts y datos relacionados con el proyecto Vuelos.
 
 Los datos para este estudio fueron extraídos del Departamento de Estadísticas de Transporte de EE. UU. (BTS), una entidad del Departamento de Transporte (DOT).
 
@@ -17,14 +17,6 @@ Puedes acceder a la aplicación de Streamlit en el siguiente enlace:
 ## Objetivo
 
 Este proyecto se centró en desarrollar un modelo predictivo para estimar retrasos en vuelos internos en EE. UU., utilizando técnicas de análisis de datos y aprendizaje automático. Además, se creó una interfaz interactiva con Streamlit, que permite a los usuarios explorar y visualizar de manera intuitiva las predicciones y los datos asociados con los retrasos de vuelos, facilitando una comprensión más clara y accesible de la información.
-
-## Acceso a los Datos
-
-Debido al tamaño del archivo de datos, no ha sido posible alojarlo directamente en GitHub. En su lugar, puedes descargar el archivo comprimido desde Google Drive a través del siguiente enlace:
-
-[Descargar archivo de datos](https://drive.google.com/file/d/1Ffq0Ep6tdUffV7_QFbn8dSLhlLsLCN5w/view?usp=drive_link)
-
-Por favor, asegúrate de descargar este archivo si deseas replicar o trabajar con el proyecto localmente.
 
 ## Estructura del Proyecto
 
