@@ -164,6 +164,16 @@ st.markdown("""
         <strong style="color: white;">Advertencia:</strong> Al pulsar el siguiente botón, se iniciará el proceso de extracción de datos de forma automatizada, lo que descargará más de 2000 archivos CSV. Este proceso puede tomar varias horas y generar una gran cantidad de datos, lo que podría afectar el rendimiento de tu dispositivo o conexión. Asegúrate de tener suficiente espacio de almacenamiento y una conexión estable antes de proceder.
     </div>
 """, unsafe_allow_html=True)
+import streamlit as st
+import requests
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.options import Options
+from bs4 import BeautifulSoup
 
 # CSS para centrar y estilizar el botón
 st.markdown("""
@@ -190,7 +200,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Botón estilizado y centrado
-if st.button('Iniciar extracción', use_container_width=True, type= "primary"):
+if st.button('Iniciar extracción', use_container_width=True, type="primary"):
     st.write("Iniciando el proceso de extracción de datos...")
 
     url = "https://www.transtats.bts.gov/ONTIME/Departures.aspx"
@@ -216,7 +226,10 @@ if st.button('Iniciar extracción', use_container_width=True, type= "primary"):
     if not listado_aeropuertos or not listado_aerolineas:
         st.error("No se pudieron obtener los aeropuertos o las aerolíneas de la página.")
     else:
-        driver = webdriver.Firefox()
+        # Configuración del navegador en modo headless
+        options = Options()
+        options.add_argument("--headless")  # Ejecutar sin interfaz gráfica
+        driver = webdriver.Firefox(options=options)  # Cambia a Chrome si lo prefieres
         driver.get(url)
 
         def preselecciones(driver):
@@ -254,7 +267,8 @@ if st.button('Iniciar extracción', use_container_width=True, type= "primary"):
                     if element:
                         element.click()
                         st.write(f"Datos descargados para el aeropuerto {aeropuerto} y la aerolínea {aerolinea}.")
-                except Exception:
+                except Exception as e:
+                    st.error(f"Error con el aeropuerto {aeropuerto} y la aerolínea {aerolinea}: {e}")
                     pass  # Si falla, no se imprime nada
 
         driver.quit()
