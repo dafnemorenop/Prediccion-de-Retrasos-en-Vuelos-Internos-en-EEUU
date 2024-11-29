@@ -163,13 +163,6 @@ st.markdown("""
     
      </div>""", unsafe_allow_html=True)
 
-st.markdown("""
-    <div style="padding: 10px; border: 1px solid #f5c6cb; background-color: #721c24; border-radius: 5px;">
-        <strong style="color: white;">Advertencia:</strong> Al pulsar el siguiente botón, se iniciará el proceso de extracción de datos de forma automatizada, lo que descargará más de 2000 archivos CSV. Este proceso puede tomar varias horas y generar una gran cantidad de datos, lo que podría afectar el rendimiento de tu dispositivo o conexión. Asegúrate de tener suficiente espacio de almacenamiento y una conexión estable antes de proceder.
-    </div>
-""", unsafe_allow_html=True)
-
-
 
 image = Image.open('images/avion.jpg')
 
