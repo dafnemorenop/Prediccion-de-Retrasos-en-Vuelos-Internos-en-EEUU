@@ -30,7 +30,7 @@ html_code = """
 
             display: flex;
             justify-content: flex-start;
-            margin-left: 800px; 
+            margin-left: 700px; 
 
 
             position: fixed;
