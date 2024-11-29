@@ -9,6 +9,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 from PIL import Image
 
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+
+
 st.set_page_config(
     page_title="Web Scraping",  # Título que aparecerá en la barra lateral con la primera palabra en mayúsculas
     page_icon="🌐",
