@@ -26,7 +26,7 @@ html_code = """
 
             display: flex;
             justify-content: flex-start;
-            margin-left: 1000px; 
+            margin-left: 700px; 
 
 
             position: fixed;
