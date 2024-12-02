@@ -1,117 +1,28 @@
 import streamlit as st
 from PIL import Image
 import os
+import sys
+from streamlit_option_menu import option_menu
 
+# Configuración inicial de la página
 st.set_page_config(
     page_title="FlyPredict",
     page_icon=":airplane:",
     layout="wide",
+    initial_sidebar_state="expanded",  # Aseguramos que la barra lateral esté expandida
 )
 
+# Asegúrate de que "paginas" está en el sys.path
+sys.path.append(os.path.join(os.path.dirname(__file__), "paginas"))  # Cambié "pages" por "paginas"
 
+# Importar las páginas desde la carpeta "paginas"
+from paginas import web_scraping
+from paginas import data_cleaning
+from paginas import eda
+from paginas import modeling
 
-
-# Código HTML para la barra de navegación como encabezado
-html_code = """
-<head>
-    <style>
-        /* Barra de navegación como encabezado */
-        #navigation {
-            background-color: rgba(44, 62, 80, 0.9); /* Fondo oscuro y semi-transparente */
-            padding: 2px 5px;
-            border-radius: 100px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            margin-bottom: 10px;
-            display: flex;
-
-            display: flex;
-            justify-content: flex-start;
-            margin-left: 700px; 
-
-
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        /* Estilo para la lista de enlaces */
-        .menu {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            max-width: 500px;
-            gap: 40px;
-        }
-
-        /* Estilo para los enlaces */
-        .menu li {
-            list-style-type: none;
-            display: flex;
-            align-items: center;
-            font-size: 20px;
-            transition: transform 0.3s ease;  /* Animación suave al pasar el cursor */
-        }
-
-        /* Estilo para los iconos y texto */
-        .menu li a {
-            text-decoration: none;
-            color: #ECF0F1;  /* Color claro */
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;  /* Espacio entre el icono y el texto */
-        }
-
-        /* Efecto de cambio de color y tamaño al pasar el cursor */
-        .menu li:hover {
-            transform: scale(1.2);  /* Efecto de zoom */
-            color: #3498DB;  /* Cambiar el color al azul */
-        }
-
-        /* Estilo de los iconos */
-        .menu li i {
-            font-size: 28px;  /* Tamaño de los iconos */
-        }
-
-        /* Ajustar el contenido de la página para no quedar tapado por la barra */
-        .content {
-            margin-top: 100px;
-        }
-    </style>
-</head>
-
-<div id='navigation'>
-    <div class='container'>
-        <div class='section' id='navigation-wrapper'>
-            <div class='widget HTML' data-version='1' id='HTML11'>
-                <ul class='menu'>
-                    <li style="margin-top: 50px;"><a href='https://www.linkedin.com/in/dafne-moreno-palomares-86a30526b/' target='_blank'>
-                        <i class="fa fa-linkedin"></i> LinkedIn</a></li>
-                    <li style="margin-top: 50px;"><a href='https://github.com/dafnemorenop' target='_blank'>
-                        <i class="fa fa-github"></i> GitHub</a></li>
-                     <li style="margin-top: 50px;"><a href='https://github.com/dafnemorenop/Prediccion-de-Retrasos-en-Vuelos-Internos-en-EEUU' target='_blank'>
-                        <i class="fa fa-github"></i> FlyPredict Data</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-"""
-
-# Añadir el HTML al principio de la aplicación (barra en la parte superior)
-st.markdown(html_code, unsafe_allow_html=True)
-
-
-
-
-# Definición de la función principal para la página
+# Función principal para la página "Main"
 def main():
-  
-
-    # Agregar un estilo CSS personalizado para la página
     st.markdown(
         """
         <style>
@@ -128,36 +39,19 @@ def main():
         </div>
         """, unsafe_allow_html=True
     )
+    st.write("")  
 
-    # CSS para estilizar los contenedores
-    st.markdown(
-        """
-        <style>
-            .container {
-                padding: 10px; /* Espaciado interno */
-                margin: 10px; /* Separación entre contenedores */
-                text-align: justify; /* Justificar texto */
-            }
-            .container h3 {
-                color: #90caf9; /* Azul claro para los títulos */
-                margin-bottom: 10px; /* Separación del título */
-            }
-        </style>
-        """, 
-        unsafe_allow_html=True
-    )
 
     st.markdown(
         """
-        <div style="text-align: justify">
-            <h2><strong>Predicción de Retrasos en Vuelos Internos en EEUU:</strong> 
-            Desarrollo de un Modelo Predictivo con Streamlit para la Visualización de Datos</h2>
-        </div>
+        <h2 style="text-align: center">
+            Predicción de Retrasos en Vuelos Internos en EEUU: Desarrollo de un Modelo Predictivo con Streamlit para la Visualización de Datos</h2>
         """,
         unsafe_allow_html=True
     )
-
-    
+    st.write("")  
+    st.write("")  
+    st.write("")  
     # Crear las columnas para los contenedores
     col1, col2, col3 = st.columns(3)
 
@@ -166,8 +60,8 @@ def main():
             """
             <div class="container">
                 <h3>Descripción</h3>
-                <p>FlyPredict es una aplicación para la predicción de vuelos internos en EE.UU. para el mes de diciembre entre los años 2021 y 2023.</p>
-                <p>Puedes visitar la página del Departamento de Estadísticas de Transporte de EE. UU., de donde se obtuvieron los datos para el estudio mediante web scraping, en el siguiente enlace:</p>
+                <p style="text-align: justify">FlyPredict es una aplicación para la predicción de vuelos internos en EE.UU. para el mes de diciembre entre los años 2021 y 2023.</p>
+                <p style="text-align: justify">Puedes visitar la página del Departamento de Estadísticas de Transporte de EE. UU., de donde se obtuvieron los datos para el estudio mediante web scraping, en el siguiente enlace:</p>
                 <p>👉<a href="https://www.transtats.bts.gov/ONTIME/Departures.aspx" target="_blank">Departamento de Estadísticas de Transporte de EE. UU.</a></p>
             </div>
             """, 
@@ -179,8 +73,8 @@ def main():
             """
             <div class="container">
                 <h3>Objetivo</h3>
-                <p>Este proyecto se centró en desarrollar un modelo predictivo para estimar retrasos en vuelos internos en EE. UU., utilizando técnicas de análisis de datos y aprendizaje automático.</p>
-                <p>Este estudio proporciona una visión sobre las causas, el rendimiento y los factores que influyen en la puntualidad aérea, presentando un modelo predictivo que permite anticipar la puntualidad de las aerolíneas y contribuir así a la mejora de la satisfacción de los pasajeros.</p>
+                <p style="text-align: justify">Este proyecto se centró en desarrollar un modelo predictivo para estimar retrasos en vuelos internos en EE. UU., utilizando técnicas de análisis de datos y aprendizaje automático.</p>
+                <p style="text-align: justify">Este estudio proporciona una visión sobre las causas, el rendimiento y los factores que influyen en la puntualidad aérea, presentando un modelo predictivo que permite anticipar la puntualidad de las aerolíneas y contribuir así a la mejora de la satisfacción de los pasajeros.</p>
             </div>
             """, 
             unsafe_allow_html=True
@@ -191,7 +85,7 @@ def main():
             """
             <div class="container">
                 <h3>Tecnologías</h3>
-                <p>El proyecto fue desarrollado con herramientas tecnológicas que facilitaron el análisis eficiente de grandes volúmenes de datos y la visualización clara e interactiva de resultados, destacando patrones y tendencias relevantes.</p>
+                <p style="text-align: justify">El proyecto fue desarrollado con herramientas tecnológicas que facilitaron el análisis eficiente de grandes volúmenes de datos y la visualización clara e interactiva de resultados, destacando patrones y tendencias relevantes.</p>
                 <ul>
                     <li>Lenguaje de programación: Python</li>
                     <li>Bibliotecas para manipulación y análisis de datos: Pandas y Numpy</li>
@@ -202,20 +96,128 @@ def main():
             """, 
             unsafe_allow_html=True
         )
-        
 
-    image = Image.open('images/vista-aerea.png')
 
-    # Usar un contenedor y tres columnas
+    # Ruta del archivo GIF
+    image_path = os.path.join(os.path.dirname(__file__), 'images', 'gif_avion.gif')
+
+    # Cargar la imagen GIF
+    image = Image.open(image_path)
+
+    # Crear un contenedor con columnas
     with st.container():
-        col1, col2, col3 = st.columns([1, 2, 1])  # Aquí las columnas tienen proporciones 1:2:1
-
-        # Centrar la imagen en la columna central (col2)
+        col1, col2, col3 = st.columns([1, 2, 1])  # Crear tres columnas, con la columna central más ancha
         with col2:
-            st.image(image, use_column_width=True)
+            # Espacios en blanco antes de la imagen (puedes ajustar la cantidad de espacios según lo necesites)
+            st.write("")  # Espacio en blanco
+            st.write("")  
+            st.write("")  
+            st.write("")  
+            
+            # Mostrar la imagen dentro de la columna central
+            st.image(image, use_container_width=True)
+
+
+# Función para crear la barra lateral personalizada con íconos
+def create_sidebar():
+    # CSS personalizado para mejorar la barra lateral y los botones
+    st.markdown(
+        """
+        <style>
+            /* Estilo para la barra lateral */
+            .stSidebar {
+                background-color: #212121; /* Fondo oscuro */
+                color: white; /* Texto blanco */
+                padding: 20px;
+                font-size: 18px;
+                font-family: "Arial", sans-serif;
+            }
+
+            /* Título de la barra lateral */
+            .stSidebar h2 {
+                color: #90caf9;
+                text-align: center;
+                font-size: 22px;
+            }
+
+            /* Estilo de los botones del menú */
+            .stSidebar select {
+                background-color: #90caf9;
+                color: white;
+                border: none;
+                padding: 10px;
+                font-size: 16px;
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
+
+            .stSidebar select:focus {
+                background-color: #1976d2;
+            }
+
+            /* Estilo para los links en la barra lateral */
+            .stSidebar a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                display: block;
+                padding: 8px;
+                border-radius: 5px;
+                margin: 5px 0;
+            }
+
+            .stSidebar a:hover {
+                background-color: #1976d2;
+            }
+        </style>
+        """, unsafe_allow_html=True
+    )
+
+    st.sidebar.markdown(
+        f'<div style="text-align: center; font-size: 18px; margin-bottom: 30px;">'
+        f'Proyecto realizado por<br>'
+        f'Dafne Moreno Palomares'
+        f'</div>',
+        unsafe_allow_html=True
+    )
+
+    # Crear la barra lateral
+def create_sidebar():
+    st.sidebar.markdown(
+        f'<div style="text-align: center; font-size: 18px; margin-bottom: 30px;">'
+        f'Proyecto realizado por<br>'
+        f'Dafne Moreno Palomares'
+        f'</div>',
+        unsafe_allow_html=True
+    )
+
+    with st.sidebar:
+        selected = option_menu(
+            "Menú",
+            ["Inicio", "Web Scraping", "Limpieza", "EDA", "Modelo"],
+            icons=["house", "globe", "trash", "bar-chart-line", "cpu"],
+            menu_icon="cast",
+            default_index=0,
+            orientation="vertical",
+        )
+
+    # Navegación de las páginas
+    if selected == "Inicio":
+        main()  # Llama a la función principal
+    elif selected == "Web Scraping":
+        web_scraping.display()
+    elif selected == "Limpieza":
+        data_cleaning.display()
+    elif selected == "EDA":
+        eda.display()
+    elif selected == "Modelo":
+        modeling.display()
+
 
     # Copos de nieve
-    st.markdown(
+st.markdown(
         """
         <style>
             .snowflakes {
@@ -276,7 +278,7 @@ def main():
         """, unsafe_allow_html=True
     )
 
-
-# Llama a la función main para que se ejecute cuando se corra este archivo
+# Ejecutar la aplicación
 if __name__ == "__main__":
-    main()
+    create_sidebar()
+
