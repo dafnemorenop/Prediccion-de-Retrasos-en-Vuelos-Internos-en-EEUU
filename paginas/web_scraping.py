@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.firefox.options import Options  # Para configurar navegador en modo headless
-from webdriver_manager.microsoft import EdgeDriverManager  # Importa EdgeDriverManager para gestionar el controlador de Edge
 
 from time import sleep
 from PIL import Image
