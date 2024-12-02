@@ -1,3 +1,6 @@
+import streamlit as st
+from PIL import Image
+
 def display():
 
     # Título de la página web
