@@ -35,12 +35,11 @@ Este proyecto está organizado en diferentes carpetas para facilitar su uso y ma
 - **`modules`**: Contiene módulos de código reutilizables y funciones auxiliares que se utilizan en el proyecto.
 
 - **`paginas`**: Carpeta con los archivos HTML para las diferentes páginas del sitio web:
+  - **`inicio`**: Página de inicio del sitio web con la explicación del proyecto.
+  - **`web scraping`**: Página para la explicación de la extracción de datos.
   - **`eda`**: Página para el análisis exploratorio de datos.
-  - **`inicio`**: Página de inicio del sitio web.
   - **`modelo`**: Página para mostrar los resultados del modelo.
-  - **`sobre_nosotros`**: Página con información sobre el equipo o la organización.
-  - **`sobre_proyecto`**: Página con detalles sobre el proyecto.
-  - **`vuelos`**: Página que muestra información sobre los vuelos.
+
 
 - **`proyecto_paginas`**: Carpeta con archivos adicionales relacionados con la estructura y funcionalidad de las páginas del proyecto.
 
