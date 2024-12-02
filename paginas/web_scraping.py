@@ -33,16 +33,13 @@ def display():
         1. **Obtención de opciones de aeropuertos y aerolíneas**:
         - Se hace una solicitud HTTP a la página y se extraen los datos de los menús desplegables (aeropuertos y aerolíneas) utilizando la librería `BeautifulSoup`.
 
-        2. **Iteración para extraer los datos**:
-        - Se recorren todas las combinaciones de aeropuertos y aerolíneas para extraer los datos deseados de manera eficiente.
-
-        3. **Manejo de errores y estado de los datos**:
-        - Se implementa un manejo de excepciones para casos donde no se encuentran datos o el proceso falla, notificando al usuario de manera apropiada.
+        2. **Descarga de archivos CSV**:
+        - Una vez seleccionados los valores deseados, se simula el envío del formulario para generar y descargar los archivos CSV de los datos de vuelos.
         </div>""", unsafe_allow_html=True)
 
     st.markdown("""
         <div style="padding: 10px; border: 1px solid #f5c6cb; background-color: #721c24; border-radius: 5px;">
-            <strong style="color: white;">Advertencia:</strong> Al pulsar el siguiente botón, se iniciará el proceso de extracción de datos de forma automatizada. Este proceso puede tomar un tiempo, dependiendo de la cantidad de datos.
+            <strong style="color: white;">Advertencia:</strong> Al pulsar el siguiente botón, se iniciará el proceso de extracción de datos de forma automatizada. Este proceso puede tomar un tiempo dependiendo de la cantidad de datos.
         </div>
     """, unsafe_allow_html=True)
 
@@ -84,7 +81,7 @@ def display():
             seleccionar_aeropuerto_aerolinea = soup.find("select", attrs={"name": aeropuertos_aerolineas})
             if seleccionar_aeropuerto_aerolinea:
                 opciones = seleccionar_aeropuerto_aerolinea.find_all("option")
-                listado_opciones = [opcion.text for opcion in opciones]
+                listado_opciones = [opcion['value'] for opcion in opciones if opcion['value'] != '']
                 return listado_opciones
             else:
                 return []
@@ -99,12 +96,47 @@ def display():
         else:
             st.write(f"Se han encontrado {len(listado_aeropuertos)} aeropuertos y {len(listado_aerolineas)} aerolíneas.")
 
-            # Aquí puedes realizar cualquier procesamiento adicional que desees
-            st.write("Ahora puedes utilizar estos datos para realizar análisis adicionales.")
+            # Aquí comenzamos la descarga de archivos CSV para cada aeropuerto y aerolínea
+            for aeropuerto in listado_aeropuertos:
+                for aerolinea in listado_aerolineas:
+                    st.write(f"Descargando datos para aeropuerto {aeropuerto} y aerolínea {aerolinea}...")
 
-            # Ejemplo de cómo podrías procesar o mostrar los datos
-            st.write("Listado de aeropuertos:", listado_aeropuertos[:10])  # Muestra los primeros 10 aeropuertos
-            st.write("Listado de aerolíneas:", listado_aerolineas[:10])  # Muestra las primeras 10 aerolíneas
+                    # Crear los datos de la solicitud POST (simulando el formulario)
+                    data = {
+                        'cboAirport': aeropuerto,  # Aeropuerto seleccionado
+                        'cboAirline': aerolinea,  # Aerolínea seleccionada
+                        'chkAllStatistics': 'on',  # Marcar la opción para todas las estadísticas
+                        'chkAllDays': 'on',  # Marcar la opción para todos los días
+                        'chkMonths_11': 'on',  # Diciembre (Mes 11)
+                        'chkYears_34': 'on',  # 2021
+                        'chkYears_35': 'on',  # 2022
+                        'chkYears_36': 'on',  # 2023
+                    }
+
+                    # Hacer una solicitud POST para generar el CSV
+                    response = requests.post(url, data=data)
+
+                    # Si la solicitud es exitosa y se genera el archivo CSV, lo descargamos
+                    if response.status_code == 200:
+                        # Buscar el enlace de descarga del CSV en la respuesta
+                        soup = BeautifulSoup(response.text, 'html.parser')
+                        download_link = soup.find('a', id='DL_CSV')  # Identificamos el enlace de descarga
+
+                        if download_link:
+                            csv_url = download_link['href']
+                            st.write(f"Descargando archivo CSV desde: {csv_url}")
+
+                            # Descargar el archivo CSV
+                            csv_response = requests.get(csv_url)
+                            if csv_response.status_code == 200:
+                                file_name = f"datos_{aeropuerto}_{aerolinea}.csv"
+                                with open(file_name, 'wb') as file:
+                                    file.write(csv_response.content)
+                                st.write(f"Archivo descargado: {file_name}")
+                            else:
+                                st.write("No se pudo descargar el archivo CSV.")
+                    else:
+                        st.write("Error al generar los datos CSV.")
 
     image = Image.open('images/avion.jpg')
     st.image(image, use_container_width=True)
