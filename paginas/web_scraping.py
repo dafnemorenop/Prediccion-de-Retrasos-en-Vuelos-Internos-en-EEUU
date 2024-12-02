@@ -50,10 +50,14 @@ def display():
         - Se implementa un manejo de excepciones para casos donde no se encuentran datos o el proceso falla, notificando al usuario de manera apropiada.
         
         </div>""", unsafe_allow_html=True)
-
+    
+    st.write("")  
+    st.write("")  
+    st.write("") 
+    
     st.markdown("""
         <div style="padding: 10px; border: 1px solid #f5c6cb; background-color: #721c24; border-radius: 5px;">
-            <strong style="color: white;">Advertencia:</strong> Si desea los datos para trabajar con ellos podrá extraerlos corriendo el notebook de notebooks -> 01.0_web_scraping.ipynb en GitHub. Tenga en cuenta que se iniciará el proceso de extracción de datos de forma automatizada, lo que descargará más de 2000 archivos CSV. Este proceso puede tomar varias horas y generar una gran cantidad de datos, lo que podría afectar el rendimiento de tu dispositivo o conexión. Asegúrate de tener suficiente espacio de almacenamiento y una conexión estable antes de proceder.
+            <strong style="color: white;">Advertencia:</strong> Si desea los datos para trabajar con ellos podrá extraerlos corriendo el notebook de notebooks -> 01.0_web_scraping.ipynb en GitHub. Tenga en cuenta que se iniciará el proceso de extracción de datos de forma automatizada, lo que descargará más de 2000 archivos CSV. Este proceso puede tomar varias horas y generar una gran cantidad de datos, lo que podría afectar el rendimiento de tu dispositivo o conexión. Asegúrese de tener suficiente espacio de almacenamiento y una conexión estable antes de proceder.
         </div>
     """, unsafe_allow_html=True)
     st.write("")  
