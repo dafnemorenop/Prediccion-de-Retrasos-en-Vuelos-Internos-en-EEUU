@@ -1,12 +1,5 @@
 import streamlit as st
 
-
-# st.set_page_config(
-#     page_title="Web Scraping",  # Título que aparecerá en la barra lateral con la primera palabra en mayúsculas
-#     page_icon="🌐",
-# )
-
-
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -98,16 +91,16 @@ def display():
     """, unsafe_allow_html=True)
 
     # Botón estilizado y centrado
-    if st.button('Iniciar extracción', use_container_width=True, type= "primary"):
+    if st.button('Iniciar extracción', use_container_width=True, type="primary"):
         st.write("Iniciando el proceso de extracción de datos...")
-
+    
         url = "https://www.transtats.bts.gov/ONTIME/Departures.aspx"
-
+    
         def obtener_opciones(url, aeropuertos_aerolineas):
             """Con esta función se seleccionan los aeropuertos o las aerolíneas que están en un desplegable"""
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'html.parser')
-
+    
             seleccionar_aeropuerto_aerolinea = soup.find("select", attrs={"name": aeropuertos_aerolineas})
             if seleccionar_aeropuerto_aerolinea:
                 opciones = seleccionar_aeropuerto_aerolinea.find_all("option")
@@ -115,57 +108,69 @@ def display():
                 return listado_opciones
             else:
                 return []
-
+    
         # Obtener listado de aeropuertos y aerolíneas
         listado_aeropuertos = obtener_opciones(url, "cboAirport")
         listado_aerolineas = obtener_opciones(url, "cboAirline")
-
+    
         # Comprobar si se encontraron los datos necesarios
         if not listado_aeropuertos or not listado_aerolineas:
             st.error("No se pudieron obtener los aeropuertos o las aerolíneas de la página.")
         else:
-            driver = webdriver.Firefox()
-            driver.get(url)
-
-            def preselecciones(driver):
-                """Preselecciona las casillas necesarias para la extracción"""
-                try:
-                    driver.find_element(By.ID, "chkAllStatistics").click()
-                    driver.find_element(By.ID, "chkAllDays").click()
-                    driver.find_element(By.ID, "chkMonths_11").click()  # Selecciona diciembre
-                    driver.find_element(By.ID, "chkYears_34").click()   # Selecciona 2021
-                    driver.find_element(By.ID, "chkYears_35").click()   # Selecciona 2022
-                    driver.find_element(By.ID, "chkYears_36").click()   # Selecciona 2023
-                except Exception:
-                    pass  # Si falla, no se imprime nada
-
-            preselecciones(driver)
-
-            # Iterar sobre todos los aeropuertos y aerolíneas para descargar los datos
-            for aeropuerto in listado_aeropuertos:
-                select_aeropuerto = Select(driver.find_element(By.NAME, "cboAirport"))
-                select_aeropuerto.select_by_visible_text(aeropuerto)
-
-                for aerolinea in listado_aerolineas:
+            # Configuración de Selenium en modo headless
+            options = Options()
+            options.headless = True
+    
+            try:
+                # Inicializa el navegador
+                driver = webdriver.Firefox(options=options)
+                driver.get(url)
+    
+                def preselecciones(driver):
+                    """Preselecciona las casillas necesarias para la extracción"""
                     try:
-                        select_aerolinea = Select(driver.find_element(By.NAME, "cboAirline"))
-                        select_aerolinea.select_by_visible_text(aerolinea)
-
-                        click_submit = driver.find_element(By.ID, "btnSubmit").click()
-
-                        # Desplazar la página para mostrar el botón de descarga
-                        driver.execute_script("window.scrollBy(0, 200);")
-
-                        element = WebDriverWait(driver, 10).until(
-                            EC.presence_of_element_located((By.ID, "DL_CSV"))
-                        )
-                        if element:
-                            element.click()
-                            st.write(f"Datos descargados para el aeropuerto {aeropuerto} y la aerolínea {aerolinea}.")
-                    except Exception:
-                        pass  # Si falla, no se imprime nada
-
-            driver.quit()
+                        driver.find_element(By.ID, "chkAllStatistics").click()
+                        driver.find_element(By.ID, "chkAllDays").click()
+                        driver.find_element(By.ID, "chkMonths_11").click()  # Selecciona diciembre
+                        driver.find_element(By.ID, "chkYears_34").click()   # Selecciona 2021
+                        driver.find_element(By.ID, "chkYears_35").click()   # Selecciona 2022
+                        driver.find_element(By.ID, "chkYears_36").click()   # Selecciona 2023
+                    except Exception as e:
+                        st.warning(f"Error en preselecciones: {e}")
+    
+                preselecciones(driver)
+    
+                # Iterar sobre todos los aeropuertos y aerolíneas para descargar los datos
+                for aeropuerto in listado_aeropuertos:
+                    select_aeropuerto = Select(driver.find_element(By.NAME, "cboAirport"))
+                    select_aeropuerto.select_by_visible_text(aeropuerto)
+    
+                    for aerolinea in listado_aerolineas:
+                        try:
+                            select_aerolinea = Select(driver.find_element(By.NAME, "cboAirline"))
+                            select_aerolinea.select_by_visible_text(aerolinea)
+    
+                            click_submit = driver.find_element(By.ID, "btnSubmit").click()
+    
+                            # Desplazar la página para mostrar el botón de descarga
+                            driver.execute_script("window.scrollBy(0, 200);")
+    
+                            element = WebDriverWait(driver, 10).until(
+                                EC.presence_of_element_located((By.ID, "DL_CSV"))
+                            )
+                            if element:
+                                element.click()
+                                st.write(f"Datos descargados para el aeropuerto {aeropuerto} y la aerolínea {aerolinea}.")
+                        except Exception as e:
+                            st.warning(f"Error procesando {aeropuerto} y {aerolinea}: {e}")
+    
+                driver.quit()
+    
+            except Exception as e:
+                st.error(f"Error al iniciar el navegador: {e}")
+            finally:
+                if 'driver' in locals():
+                    driver.quit()
 
 
     image = Image.open('images/avion.jpg')
