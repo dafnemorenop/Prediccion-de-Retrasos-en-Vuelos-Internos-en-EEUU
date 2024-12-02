@@ -55,7 +55,7 @@ def display():
     )
 
     # Cargar el dataset
-    df = pd.read_pickle(os.path.join('.', 'vuelos_limpio.pkl'))  # Ruta relativa a la raíz del proyecto
+    df = pd.read_pickle(r"vuelos_limpio.pkl") 
     df_copia = df.copy()
     df_2021 = df[df['anio'] == 2021]
     df_2022 = df[df['anio'] == 2022]
