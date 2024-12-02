@@ -1,19 +1,9 @@
 import streamlit as st
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.firefox.options import Options  # Para configurar navegador en modo headless
-
-from time import sleep
 from PIL import Image
 
-
 def display():
-
     # Título de la página web
     st.markdown(
         """
@@ -32,39 +22,27 @@ def display():
         """, unsafe_allow_html=True
     )
 
-
     # Descripción explicativa de cómo se realizó la extracción
-
-
-
     st.markdown("""
-            <div style="text-align: justify">
+        <div style="text-align: justify">
         <h3>Automatización de extracción de datos de DOT de USA</h3>
         
-        El proceso de extracción de datos de vuelos se realiza a través de un script automatizado que accede directamente al sitio web del **[Departamento de Estadísticas de Transporte de EE. UU.](https://www.transtats.bts.gov/ONTIME/Departures.aspx)**. Este script emplea librerías como BeautifulSoup y Selenium para navegar en el sitio, seleccionar las opciones de aeropuertos y aerolíneas, y extraer la información sobre vuelos internos, retrasos y otros datos relevantes para el análisis de la puntualidad aérea en los Estados Unidos.
+        El proceso de extracción de datos de vuelos se realiza a través de un script automatizado que accede directamente al sitio web del **[Departamento de Estadísticas de Transporte de EE. UU.](https://www.transtats.bts.gov/ONTIME/Departures.aspx)**. Este script emplea librerías como BeautifulSoup y requests para extraer la información sobre vuelos internos, retrasos y otros datos relevantes para el análisis de la puntualidad aérea en los Estados Unidos.
 
-    
         <h3>Flujo de trabajo</h3>
         1. **Obtención de opciones de aeropuertos y aerolíneas**:
         - Se hace una solicitud HTTP a la página y se extraen los datos de los menús desplegables (aeropuertos y aerolíneas) utilizando la librería `BeautifulSoup`.
 
-        2. **Automatización de la selección de datos con Selenium**:
-        - Se emplea Selenium para iniciar un navegador y seleccionar las opciones de aeropuertos y aerolíneas de manera programada.
+        2. **Iteración para extraer los datos**:
+        - Se recorren todas las combinaciones de aeropuertos y aerolíneas para extraer los datos deseados de manera eficiente.
 
-        3. **Preselección de estadísticas y configuraciones**:
-        - Se marcan las opciones de estadísticas, días, meses y años para ajustar la búsqueda.
-
-        4. **Iteración para extraer los datos**:
-        - Se recorren todas las combinaciones de aeropuertos y aerolíneas para hacer clic en el botón de descarga y guardar los archivos CSV.
-
-        5. **Manejo de errores y estado de los datos**:
+        3. **Manejo de errores y estado de los datos**:
         - Se implementa un manejo de excepciones para casos donde no se encuentran datos o el proceso falla, notificando al usuario de manera apropiada.
-        
         </div>""", unsafe_allow_html=True)
 
     st.markdown("""
         <div style="padding: 10px; border: 1px solid #f5c6cb; background-color: #721c24; border-radius: 5px;">
-            <strong style="color: white;">Advertencia:</strong> Al pulsar el siguiente botón, se iniciará el proceso de extracción de datos de forma automatizada, lo que descargará más de 2000 archivos CSV. Este proceso puede tomar varias horas y generar una gran cantidad de datos, lo que podría afectar el rendimiento de tu dispositivo o conexión. Asegúrate de tener suficiente espacio de almacenamiento y una conexión estable antes de proceder.
+            <strong style="color: white;">Advertencia:</strong> Al pulsar el siguiente botón, se iniciará el proceso de extracción de datos de forma automatizada. Este proceso puede tomar un tiempo, dependiendo de la cantidad de datos.
         </div>
     """, unsafe_allow_html=True)
 
@@ -95,14 +73,14 @@ def display():
     # Botón estilizado y centrado
     if st.button('Iniciar extracción', use_container_width=True, type="primary"):
         st.write("Iniciando el proceso de extracción de datos...")
-    
+
         url = "https://www.transtats.bts.gov/ONTIME/Departures.aspx"
-    
+
         def obtener_opciones(url, aeropuertos_aerolineas):
             """Con esta función se seleccionan los aeropuertos o las aerolíneas que están en un desplegable"""
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'html.parser')
-    
+
             seleccionar_aeropuerto_aerolinea = soup.find("select", attrs={"name": aeropuertos_aerolineas})
             if seleccionar_aeropuerto_aerolinea:
                 opciones = seleccionar_aeropuerto_aerolinea.find_all("option")
@@ -110,76 +88,26 @@ def display():
                 return listado_opciones
             else:
                 return []
-    
+
         # Obtener listado de aeropuertos y aerolíneas
         listado_aeropuertos = obtener_opciones(url, "cboAirport")
         listado_aerolineas = obtener_opciones(url, "cboAirline")
-    
+
         # Comprobar si se encontraron los datos necesarios
         if not listado_aeropuertos or not listado_aerolineas:
             st.error("No se pudieron obtener los aeropuertos o las aerolíneas de la página.")
         else:
-            # Configuración de Selenium en modo headless
-            options = Options()
-            options.headless = True
-    
-            try:
-                # Inicializa el navegador
-                driver = webdriver.Firefox(options=options)
-                driver.get(url)
-    
-                def preselecciones(driver):
-                    """Preselecciona las casillas necesarias para la extracción"""
-                    try:
-                        driver.find_element(By.ID, "chkAllStatistics").click()
-                        driver.find_element(By.ID, "chkAllDays").click()
-                        driver.find_element(By.ID, "chkMonths_11").click()  # Selecciona diciembre
-                        driver.find_element(By.ID, "chkYears_34").click()   # Selecciona 2021
-                        driver.find_element(By.ID, "chkYears_35").click()   # Selecciona 2022
-                        driver.find_element(By.ID, "chkYears_36").click()   # Selecciona 2023
-                    except Exception as e:
-                        st.warning(f"Error en preselecciones: {e}")
-    
-                preselecciones(driver)
-    
-                # Iterar sobre todos los aeropuertos y aerolíneas para descargar los datos
-                for aeropuerto in listado_aeropuertos:
-                    select_aeropuerto = Select(driver.find_element(By.NAME, "cboAirport"))
-                    select_aeropuerto.select_by_visible_text(aeropuerto)
-    
-                    for aerolinea in listado_aerolineas:
-                        try:
-                            select_aerolinea = Select(driver.find_element(By.NAME, "cboAirline"))
-                            select_aerolinea.select_by_visible_text(aerolinea)
-    
-                            click_submit = driver.find_element(By.ID, "btnSubmit").click()
-    
-                            # Desplazar la página para mostrar el botón de descarga
-                            driver.execute_script("window.scrollBy(0, 200);")
-    
-                            element = WebDriverWait(driver, 10).until(
-                                EC.presence_of_element_located((By.ID, "DL_CSV"))
-                            )
-                            if element:
-                                element.click()
-                                st.write(f"Datos descargados para el aeropuerto {aeropuerto} y la aerolínea {aerolinea}.")
-                        except Exception as e:
-                            st.warning(f"Error procesando {aeropuerto} y {aerolinea}: {e}")
-    
-                driver.quit()
-    
-            except Exception as e:
-                st.error(f"Error al iniciar el navegador: {e}")
-            finally:
-                if 'driver' in locals():
-                    driver.quit()
+            st.write(f"Se han encontrado {len(listado_aeropuertos)} aeropuertos y {len(listado_aerolineas)} aerolíneas.")
 
+            # Aquí puedes realizar cualquier procesamiento adicional que desees
+            st.write("Ahora puedes utilizar estos datos para realizar análisis adicionales.")
+
+            # Ejemplo de cómo podrías procesar o mostrar los datos
+            st.write("Listado de aeropuertos:", listado_aeropuertos[:10])  # Muestra los primeros 10 aeropuertos
+            st.write("Listado de aerolíneas:", listado_aerolineas[:10])  # Muestra las primeras 10 aerolíneas
 
     image = Image.open('images/avion.jpg')
-
-
     st.image(image, use_container_width=True)
-
 
     # Copos de nieve
     st.markdown(
@@ -242,3 +170,4 @@ def display():
         </div>
         """, unsafe_allow_html=True
     )
+
