@@ -34,20 +34,21 @@ def display():
 
     
         <h3>Flujo de trabajo</h3>
+        
         1. **Obtención de opciones de aeropuertos y aerolíneas**:
-        - Se hace una solicitud HTTP a la página y se extraen los datos de los menús desplegables (aeropuertos y aerolíneas) utilizando la librería `BeautifulSoup`.
+        Se hace una solicitud HTTP a la página y se extraen los datos de los menús desplegables (aeropuertos y aerolíneas) utilizando la librería `BeautifulSoup`.
 
         2. **Automatización de la selección de datos con Selenium**:
-        - Se emplea Selenium para iniciar un navegador y seleccionar las opciones de aeropuertos y aerolíneas de manera programada.
+        Se emplea Selenium para iniciar un navegador y seleccionar las opciones de aeropuertos y aerolíneas de manera programada.
 
         3. **Preselección de estadísticas y configuraciones**:
-        - Se marcan las opciones de estadísticas, días, meses y años para ajustar la búsqueda.
+        Se marcan las opciones de estadísticas, días, meses y años para ajustar la búsqueda.
 
         4. **Iteración para extraer los datos**:
-        - Se recorren todas las combinaciones de aeropuertos y aerolíneas para hacer clic en el botón de descarga y guardar los archivos CSV.
+        Se recorren todas las combinaciones de aeropuertos y aerolíneas para hacer clic en el botón de descarga y guardar los archivos CSV.
 
         5. **Manejo de errores y estado de los datos**:
-        - Se implementa un manejo de excepciones para casos donde no se encuentran datos o el proceso falla, notificando al usuario de manera apropiada.
+        Se implementa un manejo de excepciones para casos donde no se encuentran datos o el proceso falla, notificando al usuario de manera apropiada.
         
         </div>""", unsafe_allow_html=True)
     
