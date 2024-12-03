@@ -51,7 +51,7 @@ def unir_a_dataframe(partes_files):
     return df_unido
 
 # Ruta relativa a las partes
-base_path = r'FlyPredict\data'
+base_path = r'data'
 
 # Generar dinámicamente las rutas de las 18 partes
 partes = [os.path.join(base_path, f'parte_{i + 1}.pkl') for i in range(18)]
