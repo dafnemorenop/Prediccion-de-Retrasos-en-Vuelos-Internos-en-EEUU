@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import sys
 import os
+import pickle
+
 from modules.funciones_eda import (mostrar_info_df, mostrar_columnas_df,
                                     mostrar_analisis_descriptivo, 
                                     mostrar_grafico_vuelos_anuales,
@@ -33,6 +35,30 @@ from modules.funciones_eda import (mostrar_info_df, mostrar_columnas_df,
                                     mostrar_grafico_barras_retraso_aerolineas_costo,
                                     mostrar_conclusiones_finales)
 
+
+
+
+def unir_a_dataframe(partes_files):
+    dataframes = []
+    
+    # Leer cada parte y cargarla como DataFrame
+    for part_file in partes_files:
+        with open(part_file, 'rb') as f:
+            dataframes.append(pd.DataFrame(pickle.load(f)))
+    
+    # Concatenar todos los DataFrames
+    df_unido = pd.concat(dataframes, ignore_index=True)
+    return df_unido
+
+# Ruta relativa a las partes
+base_path = r'FlyPredict\data'
+
+# Generar dinámicamente las rutas de las 18 partes
+partes = [os.path.join(base_path, f'parte_{i + 1}.pkl') for i in range(18)]
+
+
+
+
 def display():
 
 
@@ -54,8 +80,8 @@ def display():
         """, unsafe_allow_html=True
     )
 
-    # Cargar el dataset
-    df = pd.read_pickle(r"vuelos_limpio.pkl") 
+    # Unir las partes y cargar el DataFrame
+    df = unir_a_dataframe(partes)
     df_copia = df.copy()
     df_2021 = df[df['anio'] == 2021]
     df_2022 = df[df['anio'] == 2022]
