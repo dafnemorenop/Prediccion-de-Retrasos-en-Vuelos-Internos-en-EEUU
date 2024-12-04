@@ -22,8 +22,46 @@ st.set_page_config(
 
 
 
+
+def set_background(image_path):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+
+
 # Función principal para la página "Main"
 def main():
+
+
+
+
+
+
+        # Ruta relativa de la imagen
+    image_path = 'images/vista-aerea.png'  # Cambia esto a la ruta de tu imagen
+    set_background(image_path)
+
+    # Contenido de tu aplicación
+    st.title("Mi aplicación Streamlit con fondo personalizado")
+    st.write("Este es un contenido de prueba con el fondo cambiado.")
+
+
+
+
+
+    
     st.markdown(
         """
         <style>
