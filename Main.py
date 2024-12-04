@@ -47,7 +47,7 @@ def set_background(image_path):
             background-position: center;
             background-repeat: no-repeat; /* Evita la repetición de la imagen */
             background-attachment: fixed; /* Hace que la imagen de fondo permanezca fija */
-            height: 100vh;  /* Ajusta la altura según sea necesario */
+            height: 200vh;  /* Ajusta la altura según sea necesario */
         }}
         </style>
         """,
