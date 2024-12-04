@@ -49,7 +49,7 @@ def main():
 
 
     # ruta relativa de la imagen
-    image_path = 'images/vista-aerea.png'  # cambia esto a la ruta de tu imagen
+    image_path = 'images/nieve.jpg'  # cambia esto a la ruta de tu imagen
     set_background(image_path)
 
 
