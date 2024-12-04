@@ -172,7 +172,8 @@ def display():
 
 
     # Ruta del archivo GIF
-    image_path = os.path.join(os.path.dirname(__file__), 'images', 'gif_avion.gif')
+    image_path = os.path.join(os.path.dirname(__file__), '..', 'images', 'gif_avion.gif')
+
     
     # Leer el GIF y convertirlo a base64
     with open(image_path, "rb") as gif_file:
