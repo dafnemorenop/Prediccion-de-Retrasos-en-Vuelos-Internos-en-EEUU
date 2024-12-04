@@ -31,7 +31,7 @@ def set_background(image_path):
             background-image: url("data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}");
             background-size: cover;
             background-position: center;
-            height: 90vh;
+            height: 80vh;
         }}
         </style>
         """,
