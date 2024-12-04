@@ -324,22 +324,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 import streamlit as st
-import base64
+from PIL import Image  # Asegúrate de importar correctamente la librería
 import os
+import sys
+from streamlit_option_menu import option_menu
+import base64
+
+from paginas import web_scraping
+from paginas import data_cleaning
+from paginas import eda
+from paginas import modeling
 
 # configuración inicial de la página
 st.set_page_config(
@@ -361,31 +356,25 @@ def set_background(image_path):
         }}
         </style>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True  # Cambiado a True en vez de true
     )
 
+# función principal para la página "main"
 def main():
     # ruta relativa de la imagen
-    image_path = 'images/vista-aerea.png'  # cambia esto a la ruta de tu imagen
+    image_path = 'images/vista-aerea.png'  # cambiaste esto a la ruta de tu imagen
     set_background(image_path)
 
     # contenido de tu aplicación
     st.title("mi aplicación streamlit con fondo personalizado")
     st.write("este es un contenido de prueba con el fondo cambiado.")
 
-    # resto de tu contenido aquí...
+    # El resto de tu contenido sigue igual...
 
 # función para crear la barra lateral personalizada con íconos
 def create_sidebar():
-    with st.sidebar:
-        selected = st.sidebar.selectbox(
-            "Menú",
-            ["Inicio", "Sitio web de scraping", "Limpieza", "EDA", "Modelo"]
-        )
-
-        if selected == "Inicio":
-            main()
-        # manejo para otras opciones de menú aquí...
+    # (No necesitas cambiar nada aquí si todo está correcto)
+    ...
 
 # ejecutar la aplicación
 if __name__ == "__main__":
