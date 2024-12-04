@@ -48,15 +48,13 @@ def main():
 
 
 
-
-        # Ruta relativa de la imagen
-    image_path = 'images/vista-aerea.png'  # Cambia esto a la ruta de tu imagen
+    # ruta relativa de la imagen
+    image_path = 'images/vista-aerea.png'  # cambia esto a la ruta de tu imagen
     set_background(image_path)
 
-    # Contenido de tu aplicación
-    st.title("Mi aplicación Streamlit con fondo personalizado")
-    st.write("Este es un contenido de prueba con el fondo cambiado.")
-
+    # contenido de tu aplicación
+    st.title("mi aplicación streamlit con fondo personalizado")
+    st.write("este es un contenido de prueba con el fondo cambiado.")
 
 
 
