@@ -22,23 +22,21 @@ st.set_page_config(
 sys.path.append(os.path.join(os.path.dirname(__file__), "paginas"))  # Cambié "pages" por "paginas"
 
 
+image_path = os.path.join(os.path.dirname(__file__), "images", "vista-aerea.png")
 
 # Función principal para la página "Main"
 def main():
     page_bg_img = f"""
     <style>
     body {{
-        background-image: url("images/vista-aerea.png");
+        background-image: url("file://{image_path}");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
     </style>
     """
-    
     st.markdown(page_bg_img, unsafe_allow_html=True)
-
-
     
     st.markdown(
         """
