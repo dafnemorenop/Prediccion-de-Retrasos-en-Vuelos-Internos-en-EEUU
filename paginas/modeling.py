@@ -167,9 +167,9 @@ def display():
         </div>
     """, unsafe_allow_html=True)
 
-
-
-
+    st.write("")  
+    st.write("")  
+    st.write("")  
 
     # Ruta del archivo GIF
     image_path = os.path.join(os.path.dirname(__file__), '..', 'images', 'gif_avion.gif')
