@@ -23,21 +23,36 @@ st.set_page_config(
 
 
 
+# def set_background(image_path):
+#     st.markdown(
+#         f"""
+#         <style>
+#         .stApp {{
+#             background-image: url("data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}");
+#             background-size: cover;
+#             background-position: center;
+#             height: 100vh;
+#         }}
+#         </style>
+#         """,
+#         unsafe_allow_html=True
+#     )
 def set_background(image_path):
     st.markdown(
         f"""
         <style>
         .stApp {{
             background-image: url("data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}");
-            background-size: cover;
+            background-size: contain;  /* Cambiar a contain para ajustar la imagen */
             background-position: center;
-            height: 100vh;
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            background-attachment: fixed; /* Hace que la imagen de fondo permanezca fija */
+            height: 100vh;  /* Ajusta la altura según sea necesario */
         }}
         </style>
         """,
         unsafe_allow_html=True
     )
-
 
 
 
