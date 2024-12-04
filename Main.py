@@ -10,6 +10,20 @@ from paginas import data_cleaning
 from paginas import eda
 from paginas import modeling
 
+page_bg_img = f"""
+<style>
+body {{
+    background-image: url("images/vista-aerea.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}}
+</style>
+"""
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
 
 # Configuración inicial de la página
 st.set_page_config(
