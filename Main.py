@@ -3,6 +3,7 @@ from PIL import Image
 import os
 import sys
 from streamlit_option_menu import option_menu
+import base64
 
 from paginas import web_scraping
 from paginas import data_cleaning
@@ -100,14 +101,22 @@ def main():
         )
 
 
+
     # Ruta del archivo GIF
     image_path = os.path.join(os.path.dirname(__file__), 'images', 'gif_avion.gif')
     
-    # Mostrar el GIF animado usando HTML
+    # Leer el GIF y convertirlo a base64
+    with open(image_path, "rb") as gif_file:
+        gif_data = gif_file.read()
+        gif_base64 = base64.b64encode(gif_data).decode("utf-8")
+    
+    # Mostrar el GIF usando HTML
     gif_html = f"""
-    <img src="data:image/gif;base64,{open(image_path, "rb").read().encode("base64").decode()}" alt="gif animado" style="width:100%; height:auto;">
+    <img src="data:image/gif;base64,{gif_base64}" alt="gif animado" style="width:100%; height:auto;">
     """
     st.markdown(gif_html, unsafe_allow_html=True)
+
+
 
     # Crear un contenedor con columnas
     with st.container():
