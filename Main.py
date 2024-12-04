@@ -3,6 +3,7 @@ from PIL import Image
 import os
 import sys
 from streamlit_option_menu import option_menu
+import base64
 
 from paginas import web_scraping
 from paginas import data_cleaning
