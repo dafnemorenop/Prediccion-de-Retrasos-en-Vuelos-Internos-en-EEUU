@@ -4,6 +4,12 @@ import os
 import sys
 from streamlit_option_menu import option_menu
 
+from paginas import web_scraping
+from paginas import data_cleaning
+from paginas import eda
+from paginas import modeling
+
+
 # Configuración inicial de la página
 st.set_page_config(
     page_title="FlyPredict",
@@ -15,11 +21,7 @@ st.set_page_config(
 # Asegúrate de que "paginas" está en el sys.path
 sys.path.append(os.path.join(os.path.dirname(__file__), "paginas"))  # Cambié "pages" por "paginas"
 
-# Importar las páginas desde la carpeta "paginas"
-from paginas import web_scraping
-from paginas import data_cleaning
-from paginas import eda
-from paginas import modeling
+
 
 # Función principal para la página "Main"
 def main():
@@ -100,9 +102,12 @@ def main():
 
     # Ruta del archivo GIF
     image_path = os.path.join(os.path.dirname(__file__), 'images', 'gif_avion.gif')
-
-    # Cargar la imagen GIF
-    image = Image.open(image_path)
+    
+    # Mostrar el GIF animado usando HTML
+    gif_html = f"""
+    <img src="data:image/gif;base64,{open(image_path, "rb").read().encode("base64").decode()}" alt="gif animado" style="width:100%; height:auto;">
+    """
+    st.markdown(gif_html, unsafe_allow_html=True)
 
     # Crear un contenedor con columnas
     with st.container():
