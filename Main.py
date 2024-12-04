@@ -117,21 +117,6 @@ def main():
     st.markdown(gif_html, unsafe_allow_html=True)
 
 
-
-    # Crear un contenedor con columnas
-    with st.container():
-        col1, col2, col3 = st.columns([1, 2, 1])  # Crear tres columnas, con la columna central más ancha
-        with col2:
-            # Espacios en blanco antes de la imagen (puedes ajustar la cantidad de espacios según lo necesites)
-            st.write("")  # Espacio en blanco
-            st.write("")  
-            st.write("")  
-            st.write("")  
-            
-            # Mostrar la imagen dentro de la columna central
-            st.image(image, use_container_width=True)
-
-
 # Función para crear la barra lateral personalizada con íconos
 def create_sidebar():
     # CSS personalizado para mejorar la barra lateral y los botones
