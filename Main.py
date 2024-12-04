@@ -129,6 +129,21 @@ def main():
 
 
 
+    # # Ruta del archivo GIF
+    # image_path = os.path.join(os.path.dirname(__file__), 'images', 'gif_avion.gif')
+    
+    # # Leer el GIF y convertirlo a base64
+    # with open(image_path, "rb") as gif_file:
+    #     gif_data = gif_file.read()
+    #     gif_base64 = base64.b64encode(gif_data).decode("utf-8")
+    
+    # # Mostrar el GIF usando HTML
+    # gif_html = f"""
+    # <img src="data:image/gif;base64,{gif_base64}" alt="gif animado" style="width:100%; height:auto;">
+    # """
+    # st.markdown(gif_html, unsafe_allow_html=True)
+
+
     # Ruta del archivo GIF
     image_path = os.path.join(os.path.dirname(__file__), 'images', 'gif_avion.gif')
     
@@ -137,9 +152,9 @@ def main():
         gif_data = gif_file.read()
         gif_base64 = base64.b64encode(gif_data).decode("utf-8")
     
-    # Mostrar el GIF usando HTML
+    # Mostrar el GIF con tamaño reducido usando HTML
     gif_html = f"""
-    <img src="data:image/gif;base64,{gif_base64}" alt="gif animado" style="width:100%; height:auto;">
+    <img src="data:image/gif;base64,{gif_base64}" alt="gif animado" style="width:50%; height:auto; display:block; margin:auto;">
     """
     st.markdown(gif_html, unsafe_allow_html=True)
 
